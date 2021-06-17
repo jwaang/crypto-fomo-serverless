@@ -1,5 +1,5 @@
 "use strict";
-// require("dotenv").config({ path: ".env.development" });
+require("dotenv").config({ path: ".env.development" });
 const express = require("express");
 require("../db/mongoose");
 const serverless = require("serverless-http");
@@ -11,6 +11,12 @@ const app = express();
 const router = express.Router();
 
 app.use(express.json());
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // GET - Retrieves a random item from the database and calculates how much the crypto is worth now
 router.get("/item/:ticker", async (req, res) => {
