@@ -1,5 +1,5 @@
 "use strict";
-require("dotenv").config({ path: ".env.development" });
+// require("dotenv").config({ path: ".env.development" });
 const express = require("express");
 require("../db/mongoose");
 const serverless = require("serverless-http");
