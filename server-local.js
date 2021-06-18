@@ -1,5 +1,7 @@
-"use strict";
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
-const app = require("./express/server");
+const app = require("./src/express/server");
 
-app.listen(3000, () => console.log("Local app listening on port 3000!"));
+app.listen(`${process.env.PORT}`, () => console.log(`Local app listening on port ${process.env.PORT}!`));

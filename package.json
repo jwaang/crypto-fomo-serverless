@@ -1,11 +1,11 @@
 {
-  "name": "serverless-dir",
+  "name": "crypto-fomo-serverless",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "netlify-lambda build express",
-    "start": "node server-local.js"
+    "start": "NODE_ENV=development node server-local.js"
   },
   "keywords": [],
   "author": "",
